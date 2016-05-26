@@ -5,8 +5,8 @@
 // =============================================
 
 var project = {
-    src: './src',
-    dist: './dist',
+    src: 'src',
+    dist: 'dist',
     sass: 'scss',
     js: 'js',
     img: 'img'
@@ -69,14 +69,14 @@ var environment = {
 
 // =============================================
 // IMG `gulp img`
-// minifys images
+// compresses images
 // =============================================
 
 gulp.task( 'img', function() {
     return gulp.src( project.src + '/' + project.img + '/**/*' )
         .pipe( $.changed( project.dist + '/' + project.img ) )
         .pipe( environment.production ? $.imageMin( option.imageOptimisation ) : $.util.noop() )
-        .pipe(gulp.dest( project.dist + '/' + project.img ));
+        .pipe( gulp.dest( project.dist + '/' + project.img ) );
 } );
 
 
@@ -117,7 +117,7 @@ gulp.task( 'sass', function() {
 
 gulp.task( 'clean', function( cb ) {
     return $.del( [ project.dist ], cb );
-});
+} );
 
 
 // =============================================
@@ -127,7 +127,7 @@ gulp.task( 'clean', function( cb ) {
 
 gulp.task( 'build', function( cb ) {
     $.runSequence( 'clean', [ 'img', 'js', 'sass' ], cb );
-});
+} );
 
 
 // =============================================
@@ -135,10 +135,10 @@ gulp.task( 'build', function( cb ) {
 // watches files and runs defined task on change
 // =============================================
 
-gulp.task( 'watch', function() {
-    gulp.watch( project.src + '/' + project.img + '/**/*', ['img'] );
-    gulp.watch( project.src + '/' + project.js + '/**/*.js', ['js'] );
-    gulp.watch( project.src + '/' + project.sass + '/**/*.scss', ['scss'] );
+gulp.task( 'watch', function( cb ) {
+    gulp.watch( project.src + '/' + project.img + '/**/*', [ 'img' ] );
+    gulp.watch( project.src + '/' + project.js + '/**/*.js', [ 'js' ] );
+    gulp.watch( project.src + '/' + project.sass + '/**/*.scss', [ 'sass' ] );
 } );
 
 
