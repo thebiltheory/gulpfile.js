@@ -88,7 +88,7 @@ gulp.task( 'img', function() {
 gulp.task( 'js', function() {
     return gulp.src( project.src + '/' + project.js + '/**/*.js' )
         .pipe( environment.production ? $.uglify() : $.util.noop() )
-        .pipe( gulp.dest( project.dist + '/' + project.js ) )
+        .pipe( gulp.dest( project.dist + '/' + project.js ) );
 } );
 
 
@@ -107,7 +107,7 @@ gulp.task( 'sass', function() {
         .pipe( environment.development ? $.sourcemaps.write() : $.util.noop() )
         .pipe( environment.production ? $.combineMq() : $.util.noop() )
         .pipe( environment.production ? $.cssNano( option.cssNano ) : $.util.noop() )
-        .pipe( gulp.dest( project.dist + '/css' ) )
+        .pipe( gulp.dest( project.dist + '/css' ) );
 } );
 
 
