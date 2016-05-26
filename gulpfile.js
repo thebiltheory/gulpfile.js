@@ -101,7 +101,7 @@ gulp.task( 'sass', function() {
     return gulp.src( project.src + '/' + project.sass + '/**/*.scss' )
         .pipe( $.clipEmptyFiles() )
         .pipe( environment.development ? $.sourcemaps.init() : $.util.noop() )
-        .pipe( !environment.production ? $.sass.sync().on( 'error', $.sass.logError ) : $.util.noop() )
+        .pipe( ! environment.production ? $.sass.sync().on( 'error', $.sass.logError ) : $.util.noop() )
         .pipe( environment.production ? $.sass.sync() : $.util.noop() )
         .pipe( $.autoPrefixer( option.autoprefixer ) )
         .pipe( environment.development ? $.sourcemaps.write() : $.util.noop() )
