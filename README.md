@@ -26,9 +26,9 @@ npm i
 
 ## Gulp Tasks
 * `$ npm run watch` - Default task, builds assets and watches directories for changes.
-* `$ npm run watch-dev` - Same as above, but with added dev tools enabled (Sourcemaps, browserSync etc).
+* `$ npm run watch-dev` - Same as above, but with added dev tools enabled (Sourcemaps etc).
 * `$ npm run build` - Builds all assets.
-* `$ npm run build-production` - Builds all assets in production format (Minified etc).
+* `$ npm run build-production` - Builds all assets in production format (Minified CSS and JavaScript, compressed Images etc).
 
 
 # Example Project Structure
