@@ -39,7 +39,7 @@ npm i
 |   +-- js
 |   +-- img
 +-- src/
-|   +-- css
+|   +-- scss
 |   +-- js
 |   +-- img
 +-- node_modules/
