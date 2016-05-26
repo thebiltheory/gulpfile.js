@@ -25,8 +25,8 @@ npm i
 4. Update variables, folder names and file paths at top of the gulpfile.js file to suite your project.
 
 ## Gulp Tasks
-* `$ npm run default` - Default task, builds assets and watches directories for changes.
-* `$ npm run default-dev` - Same as above, but with added dev tools enabled (Sourcemaps, browserSync etc).
+* `$ npm run watch` - Default task, builds assets and watches directories for changes.
+* `$ npm run watch-dev` - Same as above, but with added dev tools enabled (Sourcemaps, browserSync etc).
 * `$ npm run build` - Builds all assets.
 * `$ npm run build-production` - Builds all assets in production format (Minified etc).
 
