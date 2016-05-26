@@ -31,7 +31,7 @@ npm i
 * `$ npm run build-production` - Builds all assets in production format (Minified CSS and JavaScript, compressed Images etc).
 
 
-# Example Project Structure
+## Example Project Structure
 *This can be easily changed to suit your project.*
 ```
 +-- dist/
