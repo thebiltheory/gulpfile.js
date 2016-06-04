@@ -7,8 +7,10 @@
 var project = {
     src: 'src',
     dist: 'dist',
-    sass: 'scss',
-    js: 'js',
+    styles: 'styles',
+    stylesExtension: '.scss',
+    script: 'script',
+    scriptExtension: '.js',
     img: 'img'
 };
 
@@ -81,24 +83,24 @@ gulp.task( 'img', function() {
 
 
 // =============================================
-// JS `gulp js`
-// compiles js, Jshint, Minify if `--production`
+// SCRIPT `gulp script`
+// compiles script, Jshint, Minify if `--production`
 // =============================================
 
-gulp.task( 'js', function() {
-    return gulp.src( project.src + '/' + project.js + '/**/*.js' )
+gulp.task( 'script', function() {
+    return gulp.src( project.src + '/' + project.script + '/**/*' + project.scriptExtension )
         .pipe( environment.production ? $.uglify() : $.util.noop() )
-        .pipe( gulp.dest( project.dist + '/' + project.js ) );
+        .pipe( gulp.dest( project.dist + '/' + project.script ) );
 } );
 
 
 // =============================================
-// CSS `gulp css`
+// STYLES `gulp styles`
 // compiles scss to css, autoprefixer, combines media queries and minifies if `--production`
 // =============================================
 
-gulp.task( 'sass', function() {
-    return gulp.src( project.src + '/' + project.sass + '/**/*.scss' )
+gulp.task( 'styles', function() {
+    return gulp.src( project.src + '/' + project.styles + '/**/*' + project.stylesExtension )
         .pipe( $.clipEmptyFiles() )
         .pipe( environment.development ? $.sourcemaps.init() : $.util.noop() )
         .pipe( ! environment.production ? $.sass.sync().on( 'error', $.sass.logError ) : $.util.noop() )
@@ -107,12 +109,12 @@ gulp.task( 'sass', function() {
         .pipe( environment.development ? $.sourcemaps.write() : $.util.noop() )
         .pipe( environment.production ? $.combineMq() : $.util.noop() )
         .pipe( environment.production ? $.cssNano( option.cssNano ) : $.util.noop() )
-        .pipe( gulp.dest( project.dist + '/css' ) );
+        .pipe( gulp.dest( project.dist + '/' + project.styles ) );
 } );
 
 
 // =============================================
-// Clean `gulp clean
+// Clean `gulp` clean
 // destroys the build directory
 // =============================================
 
@@ -122,29 +124,29 @@ gulp.task( 'clean', function( cb ) {
 
 
 // =============================================
-// Build 'gulp build'
+// Build `gulp build`
 // builds all assets, also has `--production` option to build production ready assets
 // =============================================
 
 gulp.task( 'build', function( cb ) {
-    $.runSequence( 'clean', [ 'img', 'js', 'sass' ], cb );
+    $.runSequence( 'clean', [ 'img', 'scripts', 'styles' ], cb );
 } );
 
 
 // =============================================
-// Watch 'gulp watch'
+// Watch `gulp watch`
 // watches files and runs defined task on change
 // =============================================
 
 gulp.task( 'watch', function( cb ) {
     gulp.watch( project.src + '/' + project.img + '/**/*', [ 'img' ] );
-    gulp.watch( project.src + '/' + project.js + '/**/*.js', [ 'js' ] );
-    gulp.watch( project.src + '/' + project.sass + '/**/*.scss', [ 'sass' ] );
+    gulp.watch( project.src + '/' + project.script + '/**/*' + project.scriptExtension, [ 'script' ] );
+    gulp.watch( project.src + '/' + project.styles + '/**/*' + project.stylesExtension, [ 'styles' ] );
 } );
 
 
 // =============================================
-// Default 'gulp'
+// Default `gulp`
 // runs build task, Runs watch tasks
 // =============================================
 
