@@ -5,8 +5,8 @@ This is a common, reusable Gulp file tailored towards front-end focused projects
 | Features          | NPM Modules                                              |
 | ----------------- |--------------------------------------------------------|
 | General           | [Util](https://www.npmjs.com/package/gulp-util), [Changed](https://www.npmjs.com/package/gulp-changed), [Run sequence](https://www.npmjs.com/package/run-sequence), [Del](https://www.npmjs.com/package/del) |
-| Sass `sass`       | [Libsass](https://www.npmjs.com/package/node-sass), [Autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer), [CSS Nano](https://www.npmjs.com/package/gulp-cssnano), [Sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps), [Combine media queries](https://www.npmjs.com/package/gulp-combine-mq), [Clip Empty Files](https://www.npmjs.com/package/gulp-clip-empty-files) |
-| JavaScript `js`   | [Uglify](https://www.npmjs.com/package/gulp-uglify) |
+| Sass `styles`       | [Libsass](https://www.npmjs.com/package/node-sass), [Autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer), [CSS Nano](https://www.npmjs.com/package/gulp-cssnano), [Sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps), [Combine media queries](https://www.npmjs.com/package/gulp-combine-mq), [Clip Empty Files](https://www.npmjs.com/package/gulp-clip-empty-files) |
+| JavaScript `script`   | [Uglify](https://www.npmjs.com/package/gulp-uglify) |
 | Images `img`      | [Imagemin](https://www.npmjs.com/package/gulp-imagemin) |
 
 ## Getting Started
@@ -35,12 +35,12 @@ npm i
 *This can be easily changed to suit your project.*
 ```
 +-- dist/
-|   +-- css
-|   +-- js
+|   +-- styles
+|   +-- script
 |   +-- img
 +-- src/
-|   +-- scss
-|   +-- js
+|   +-- styles
+|   +-- script
 |   +-- img
 +-- node_modules/
 +-- package.json/
