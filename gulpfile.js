@@ -9,8 +9,8 @@ var project = {
     dist: 'dist',
     styles: 'styles',
     stylesExtension: '.scss',
-    script: 'script',
-    scriptExtension: '.js',
+    scripts: 'script',
+    scriptsExtension: '.js',
     img: 'img'
 };
 
@@ -87,10 +87,10 @@ gulp.task( 'img', function() {
 // compiles script, Jshint, Minify if `--production`
 // =============================================
 
-gulp.task( 'script', function() {
-    return gulp.src( project.src + '/' + project.script + '/**/*' + project.scriptExtension )
+gulp.task( 'scripts', function() {
+    return gulp.src( project.src + '/' + project.scripts + '/**/*' + project.scriptsExtension )
         .pipe( environment.production ? $.uglify() : $.util.noop() )
-        .pipe( gulp.dest( project.dist + '/' + project.script ) );
+        .pipe( gulp.dest( project.dist + '/' + project.scripts ) );
 } );
 
 
@@ -140,7 +140,7 @@ gulp.task( 'build', function( cb ) {
 
 gulp.task( 'watch', function( cb ) {
     gulp.watch( project.src + '/' + project.img + '/**/*', [ 'img' ] );
-    gulp.watch( project.src + '/' + project.script + '/**/*' + project.scriptExtension, [ 'script' ] );
+    gulp.watch( project.src + '/' + project.scripts + '/**/*' + project.scriptsExtension, [ 'scripts' ] );
     gulp.watch( project.src + '/' + project.styles + '/**/*' + project.stylesExtension, [ 'styles' ] );
 } );
 
