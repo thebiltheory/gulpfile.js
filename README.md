@@ -8,6 +8,7 @@ This is a common, reusable Gulp file tailored towards front-end focused projects
 | Sass `styles`       | [Libsass](https://www.npmjs.com/package/node-sass), [Autoprefixer](https://www.npmjs.com/package/gulp-autoprefixer), [CSS Nano](https://www.npmjs.com/package/gulp-cssnano), [Sourcemaps](https://www.npmjs.com/package/gulp-sourcemaps), [Combine media queries](https://www.npmjs.com/package/gulp-combine-mq), [Clip Empty Files](https://www.npmjs.com/package/gulp-clip-empty-files) |
 | JavaScript `script`   | [Uglify](https://www.npmjs.com/package/gulp-uglify) |
 | Images `img`      | [Imagemin](https://www.npmjs.com/package/gulp-imagemin) |
+| BrowserSync      | [BrowserSync](https://www.browsersync.io/docs/gulp) |
 
 ## Getting Started
 1. Clone the project / Download the zip.
@@ -38,10 +39,12 @@ npm i
 |   +-- styles
 |   +-- script
 |   +-- img
+|   +-- index.html
 +-- src/
 |   +-- styles
 |   +-- script
 |   +-- img
+|   +-- index.html
 +-- node_modules/
 +-- package.json/
 +-- gulpfile.js/
