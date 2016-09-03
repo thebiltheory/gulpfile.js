@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/JakeCobley/gulpfile.js#readme",
   "devDependencies": {
+    "browser-sync": "^2.14.3",
     "del": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^3.0.2",
