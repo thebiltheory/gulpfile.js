@@ -167,7 +167,7 @@ gulp.task( 'build', function( cb ) {
 // watches & Serve files and runs defined task on change
 // =============================================
 
-gulp.task( 'watch', function( cb ) {
+gulp.task( 'watch', ['build'], function( cb ) {
 		$.browserSync.init({
 			server: project.dist
 		});
